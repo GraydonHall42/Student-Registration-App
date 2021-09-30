@@ -1,17 +1,18 @@
 package Controller;
 
-import Model.Student;
 import View.StudentView;
+import Model.StudentModel;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class StudentControllerJK {
+public class StudentController {
     StudentView theView;
-    Student currentStudent;
+    StudentModel theModel;
 
-    public StudentControllerJK(StudentView theView) {
+    public StudentController(StudentView theView, StudentModel theModel) {
         this.theView = theView;
+        this.theModel = theModel;
 
         theView.addSearchButtonListener(new SearchButtonListener());
 
@@ -27,21 +28,26 @@ public class StudentControllerJK {
             String courseName = theView.getCourseName();
             String courseNum = theView.getCourseNum();
             String secNum = theView.getSecNum();
+            String outputString = "";
+
+            //find the student using getStudent() method
 
             // talk to back end using this input...
             // and get a string back to output to the user
             switch (option) {
-                case 0:
-                    break;
                 case 1:
                     break;
                 case 2:
+//                    outputString = theStudent.addcourse()
                     break;
                 case 3:
                     break;
                 case 4:
                     break;
+                case 5:
+                    break;
                 default:
+                    outputString = "Error!";
                     break;
             }
 
@@ -50,8 +56,8 @@ public class StudentControllerJK {
                     + "\noption selected: " + option
                     + "\ncourse name: " + courseName
                     + "\ncourse number: " + courseNum
-                    + "\nsection number: " + secNum;
-
+                    + "\nsection number: " + secNum
+                    +"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nthis is end";  // test for long output
             // send output back to view
             theView.setOutputAreaText(outPutString);
 
