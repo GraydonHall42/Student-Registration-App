@@ -39,6 +39,9 @@ public class StudentView extends JFrame{
         // add functionality to clear and close button
         formatClearCloseButtons();
 
+        // disable search button till selection is made.
+        searchButton.setEnabled(false);
+
 
         setContentPane(mainPanel);
         setTitle("Student Menu");
@@ -85,6 +88,8 @@ public class StudentView extends JFrame{
         optionList.addListSelectionListener(new ListSelectionListener() {
             @Override
             public void valueChanged(ListSelectionEvent e) {
+                // enable search button once selection is made
+                searchButton.setEnabled(true);
                 switch (optionList.getSelectedIndex()+1) {
                     case 1:
                         tfCourseName.setEnabled(true);
