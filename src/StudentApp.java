@@ -1,11 +1,13 @@
+import Model.StudentModel;
 import View.StudentView;
 import Controller.StudentControllerGH;
-import Model.Student;
+import Model.StudentModel;
 
 public class StudentApp {
     public static void main(String[] args) {
         StudentView theView = new StudentView();
-        StudentControllerGH theController = new StudentControllerGH(theView);
+        StudentModel theModel = new StudentModel();
+        StudentControllerGH theController = new StudentControllerGH(theView, theModel);
         theView.setVisible(true);
     }
 }

@@ -125,7 +125,9 @@ public class Student {
         if(student.getName() == this.getName() && student.getStudentId() == this.getStudentId()){
             return true;
         }
-        e
+        else{
+            return false;
+        }
     }
 
     // add a taken course to student
