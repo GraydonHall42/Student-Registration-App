@@ -1,16 +1,16 @@
 package Controller;
 
 import View.StudentView;
-import Model.StudentModel;
+import Model.Student;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class StudentControllerGH {
     StudentView theView;
-    StudentModel theModel;
+    Student theModel;
 
-    public StudentControllerGH(StudentView theView, StudentModel theModel) {
+    public StudentControllerGH(StudentView theView, Student theModel) {
         this.theView = theView;
         this.theModel = theModel;
 

@@ -1,6 +1,6 @@
 package Controller;
 
-import Model.StudentModel;
+import Model.Student;
 import View.StudentView;
 
 import java.awt.event.ActionEvent;
@@ -8,11 +8,10 @@ import java.awt.event.ActionListener;
 
 public class StudentControllerJK {
     StudentView theView;
-    StudentModel theModel;
+    Student currentStudent;
 
-    public StudentControllerJK(StudentView theView, StudentModel theModel) {
+    public StudentControllerJK(StudentView theView) {
         this.theView = theView;
-        this.theModel = theModel;
 
         theView.addSearchButtonListener(new SearchButtonListener());
 
@@ -32,6 +31,8 @@ public class StudentControllerJK {
             // talk to back end using this input...
             // and get a string back to output to the user
             switch (option) {
+                case 0:
+                    break;
                 case 1:
                     break;
                 case 2:
@@ -39,8 +40,6 @@ public class StudentControllerJK {
                 case 3:
                     break;
                 case 4:
-                    break;
-                case 5:
                     break;
                 default:
                     break;
