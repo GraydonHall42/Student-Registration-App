@@ -18,6 +18,7 @@ public class StudentView extends JFrame{
     private JTextField tfCourseName;
     private JTextField tfCourseNum;
     private JTextField tfSecNum;
+    private JScrollPane outputScrollPane;
 
     public StudentView(){
 
@@ -142,6 +143,7 @@ public class StudentView extends JFrame{
 
     public void setOutputAreaText(String s){
         outputArea.setText(s);
+        outputArea.setCaretPosition(0);  // place caret at top
     }
 
     public String getStudetnName(){
