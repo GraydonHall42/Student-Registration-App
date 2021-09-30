@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Student {
 
-    private String Name;
+    private String name;
     private int studentId;
     private ArrayList<Registration> courseList;
     private ArrayList<Course> takenCourses; // pre-reqs
@@ -18,7 +18,7 @@ public class Student {
     }
 
     // Register a student for a course
-    public void registerForCourse (CourseCatalogue cat, String courseName, String courseNumber, int sectionNumber) {
+    public void registerForCourse (CourseList cat, String courseName, String courseNumber, int sectionNumber) {
 
         // get course
         Course myCourse = cat.searchCat(courseName, courseNumber);
@@ -130,6 +130,11 @@ public class Student {
         }
     }
 
+    @Override
+    public String toString(){
+        return this.name + " - " + this.studentId + "\n";
+    }
+
     // add a taken course to student
     public void addPreReq(Course course) {
         takenCourses.add(course);
@@ -142,11 +147,11 @@ public class Student {
     }
 
     public String getName() {
-        return Name;
+        return name;
     }
 
     public void setName(String Name) {
-        this.Name = Name;
+        this.name = Name;
     }
 
     public int getStudentId() {
