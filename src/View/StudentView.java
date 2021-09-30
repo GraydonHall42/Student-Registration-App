@@ -148,6 +148,7 @@ public class StudentView extends JFrame{
 
     public String getStudetnName(){
         return tfStudentName.getText();
+        //this is a test comment
     }
 
     public String getStudentID(){
