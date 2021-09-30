@@ -42,7 +42,6 @@ public class StudentView extends JFrame{
         // disable search button till selection is made.
         searchButton.setEnabled(false);
 
-
         setContentPane(mainPanel);
         setTitle("Student Menu");
         setSize(450,500);
@@ -89,36 +88,41 @@ public class StudentView extends JFrame{
             @Override
             public void valueChanged(ListSelectionEvent e) {
                 // enable search button once selection is made
-                searchButton.setEnabled(true);
-                switch (optionList.getSelectedIndex()+1) {
-                    case 1:
-                        tfCourseName.setEnabled(true);
-                        tfCourseName.setText("");
-                        tfCourseNum.setEnabled(true);
-                        tfCourseNum.setText("");
-                        tfSecNum.setEnabled(false);
-                        tfSecNum.setText("N/A");
-                        break;
-                    case 2:
-                    case 3:
-                        tfCourseName.setEnabled(true);
-                        tfCourseName.setText("");
-                        tfCourseNum.setEnabled(true);
-                        tfCourseNum.setText("");
-                        tfSecNum.setEnabled(true);
-                        tfSecNum.setText("");
-                        break;
-                    case 4:
-                    case 5:
-                        tfCourseName.setEnabled(false);
-                        tfCourseName.setText("N/A");
-                        tfCourseNum.setEnabled(false);
-                        tfCourseNum.setText("N/A");
-                        tfSecNum.setEnabled(false);
-                        tfSecNum.setText("N/A");
-                        break;
-                    default:
-                        break;
+                if(optionList.isSelectionEmpty()){
+                    searchButton.setEnabled(false);
+                }
+                else {
+                    searchButton.setEnabled(true);
+                    switch (optionList.getSelectedIndex() + 1) {
+                        case 1:
+                            tfCourseName.setEnabled(true);
+                            tfCourseName.setText("");
+                            tfCourseNum.setEnabled(true);
+                            tfCourseNum.setText("");
+                            tfSecNum.setEnabled(false);
+                            tfSecNum.setText("N/A");
+                            break;
+                        case 2:
+                        case 3:
+                            tfCourseName.setEnabled(true);
+                            tfCourseName.setText("");
+                            tfCourseNum.setEnabled(true);
+                            tfCourseNum.setText("");
+                            tfSecNum.setEnabled(true);
+                            tfSecNum.setText("");
+                            break;
+                        case 4:
+                        case 5:
+                            tfCourseName.setEnabled(false);
+                            tfCourseName.setText("N/A");
+                            tfCourseNum.setEnabled(false);
+                            tfCourseNum.setText("N/A");
+                            tfSecNum.setEnabled(false);
+                            tfSecNum.setText("N/A");
+                            break;
+                        default:
+                            break;
+                    }
                 }
             }
         });
