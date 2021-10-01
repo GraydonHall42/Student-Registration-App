@@ -50,7 +50,7 @@ public class ViewController {
 
                 // add a course
                 case 2:
-                    if(theStudentController.validateStudent(new Student(name, Integer.parseInt(id)))) {
+                    if(theStudentController.validateStudent(name, Integer.parseInt(id))) {
                         outputString = "Hello " + theStudentController.getCurrentStudent() + "\n";
                     }
                     else {
@@ -64,7 +64,7 @@ public class ViewController {
 
                 // Remove a course
                 case 3:
-                    if(theStudentController.validateStudent(new Student(name, Integer.parseInt(id)))) {
+                    if(theStudentController.validateStudent(name, Integer.parseInt(id))) {
                         outputString = "Hello " + theStudentController.getCurrentStudent() + "\n";
                     }
                     else {
@@ -82,7 +82,7 @@ public class ViewController {
 
                 // View all courses take by student
                 case 5:
-                    if(theStudentController.validateStudent(new Student(name, Integer.parseInt(id)))) {
+                    if(theStudentController.validateStudent(name, Integer.parseInt(id))) {
                         outputString = "Hello " + theStudentController.getCurrentStudent() + "\n";
                     }
                     else {

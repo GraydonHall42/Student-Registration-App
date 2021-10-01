@@ -12,15 +12,15 @@ public class StudentController {
     }
 
 
-    public boolean validateStudent(Student student){
+    public boolean validateStudent(String name, int id){
         if(this.currentStudent == null){
-            this.currentStudent = this.studentList.authenticateStudent(student);
+            this.currentStudent = this.studentList.authenticateStudent(name, id);
         }
-        else if(this.currentStudent.equals(student)){
+        else if(this.currentStudent.equals(new Student(name, id))){
             return true;
         }
         else {
-            this.currentStudent = this.studentList.authenticateStudent(student);
+            this.currentStudent = this.studentList.authenticateStudent(name, id);
         }
 
         if(this.currentStudent == null){

@@ -10,7 +10,8 @@ public class StudentList {
         studentList = ImaginaryDatabase.getStudentDatabase();
     }
 
-    public Student authenticateStudent(Student student){
+    public Student authenticateStudent(String name, int id){
+        Student student = new Student(name, id);
         for(Student s : studentList){
             if(s.equals(student)){
                 return s;
