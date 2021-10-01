@@ -23,6 +23,12 @@ public class StudentController {
 
         @Override
         public void actionPerformed(ActionEvent e) {
+
+            // exit if inputs are invalid
+            if(!theView.validateInputs()){
+                return;
+            }
+
             int option = theView.getSelectedOption();
             String name = theView.getStudetnName();
             String id = theView.getStudentID();

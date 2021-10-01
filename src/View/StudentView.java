@@ -51,6 +51,46 @@ public class StudentView extends JFrame{
 
     }
 
+    public boolean validateInputs(){
+
+        // validate StudentID and secNumber
+        String studentID = tfStudentID.getText();
+        String secNum = tfSecNum.getText();
+
+        // validate ID is 4 digits
+        var IDLength =  studentID.length();
+        if(IDLength!=4){
+            outputArea.setText("Error: Student ID Must be a 4 digit integer");
+            return false;
+        }
+
+
+        if(!isInteger(studentID)){
+            outputArea.setText("Error: Student ID Must be a 4 digit integer");
+            return false;
+        }
+        else if(!secNum.equals("N/A") && !isInteger(secNum)) {
+            outputArea.setText("Error: Section Number must be an integer");
+            return false;
+        }
+
+        // all validations passed
+        return true;
+
+    }
+
+    public boolean isInteger( String input ) {
+        // from: https://stackoverflow.com/questions/237159/whats-the-best-way-to-check-if-a-string-represents-an-integer-in-java
+        try {
+            Integer.parseInt( input );
+            return true;
+        }
+        catch( Exception e ) {
+            return false;
+        }
+    }
+
+
     private void formatClearCloseButtons() {
         exitButton.addActionListener(new ActionListener() {
             @Override
