@@ -98,14 +98,6 @@ public class ViewController {
                     break;
             }
 
-//            String outPutString = "ID: " + id
-//                    + "\nName: " + name
-//                    + "\noption selected: " + option
-//                    + "\ncourse name: " + courseName
-//                    + "\ncourse number: " + courseNum
-//                    + "\nsection number: " + secNum
-//                    +"\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nthis is end";  // test for long output
-//            // send output back to view
             theView.setOutputAreaText(outputString);
 
         }
