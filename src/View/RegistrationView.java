@@ -6,7 +6,7 @@ import javax.swing.event.ListSelectionListener;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class StudentView extends JFrame{
+public class RegistrationView extends JFrame{
     private JTextField tfStudentName;
     private JTextField tfStudentID;
     private JList optionList;
@@ -20,7 +20,7 @@ public class StudentView extends JFrame{
     private JTextField tfSecNum;
     private JScrollPane outputScrollPane;
 
-    public StudentView(){
+    public RegistrationView(){
 
         String[] studentOptions = {
                 "1. Search catalogue courses",
