@@ -4,33 +4,15 @@ import Model.*;
 
 public class StudentController {
 
-    private StudentList studentList;
     private Student currentStudent;
 
-    public StudentController(StudentList studentList) {
-        this.studentList = studentList;
+    public StudentController() {
     }
 
 
-    public boolean validateStudent(String name, int id){
-        if(this.currentStudent == null){
-            this.currentStudent = this.studentList.authenticateStudent(name, id);
-        }
-        else if(this.currentStudent.equals(new Student(name, id))){
-            return true;
-        }
-        else {
-            this.currentStudent = this.studentList.authenticateStudent(name, id);
-        }
-
-        if(this.currentStudent == null){
-            return false;
-        }
-        else{
-            return true;
-        }
+    public void setCurrentStudent(Student currentStudent) {
+       this.currentStudent = currentStudent;
     }
-
 
     // case 2 - Add Course
     public String addCourse(Course course, String courseName, String courseNumber, int sectionNumber){

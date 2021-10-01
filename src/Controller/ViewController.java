@@ -9,11 +9,13 @@ import java.awt.event.ActionListener;
 public class ViewController {
     RegistrationView theView;
     StudentController theStudentController;
+    StudentListController theStudentListController;
     CourseController theCourseController;
 
-    public ViewController(RegistrationView theView, StudentController studentController, CourseController courseController) {
+    public ViewController(RegistrationView theView, StudentController studentController, StudentListController studentListController, CourseController courseController) {
         this.theView = theView;
         this.theStudentController = studentController;
+        this.theStudentListController = studentListController;
         this.theCourseController = courseController;
 
         theView.addSearchButtonListener(new SearchButtonListener());
@@ -50,12 +52,13 @@ public class ViewController {
 
                 // add a course
                 case 2:
-                    if(theStudentController.validateStudent(name, Integer.parseInt(id))) {
-                        outputString = "Hello " + theStudentController.getCurrentStudent() + "\n";
-                    }
-                    else {
+                    if(theStudentListController.validateStudent(name, Integer.parseInt(id)) == null) {
                         outputString = "That is not a valid student in our database.";
                         break;
+                    }
+                    else {
+                        theStudentController.setCurrentStudent(theStudentListController.validateStudent(name, Integer.parseInt(id)));
+                        outputString = "Hello " + theStudentController.getCurrentStudent() + "\n";
                     }
 
                     outputString += theStudentController.addCourse(theCourseController.searchForCourse(courseName, courseNum),
@@ -64,12 +67,13 @@ public class ViewController {
 
                 // Remove a course
                 case 3:
-                    if(theStudentController.validateStudent(name, Integer.parseInt(id))) {
-                        outputString = "Hello " + theStudentController.getCurrentStudent() + "\n";
-                    }
-                    else {
+                    if(theStudentListController.validateStudent(name, Integer.parseInt(id)) == null) {
                         outputString = "That is not a valid student in our database.";
                         break;
+                    }
+                    else {
+                        theStudentController.setCurrentStudent(theStudentListController.validateStudent(name, Integer.parseInt(id)));
+                        outputString = "Hello " + theStudentController.getCurrentStudent() + "\n";
                     }
 
                     outputString += theStudentController.removeCourse(courseName, courseNum, Integer.parseInt(secNum));
@@ -82,12 +86,13 @@ public class ViewController {
 
                 // View all courses take by student
                 case 5:
-                    if(theStudentController.validateStudent(name, Integer.parseInt(id))) {
-                        outputString = "Hello " + theStudentController.getCurrentStudent() + "\n";
-                    }
-                    else {
+                    if(theStudentListController.validateStudent(name, Integer.parseInt(id)) == null) {
                         outputString = "That is not a valid student in our database.";
                         break;
+                    }
+                    else {
+                        theStudentController.setCurrentStudent(theStudentListController.validateStudent(name, Integer.parseInt(id)));
+                        outputString = "Hello " + theStudentController.getCurrentStudent() + "\n";
                     }
                     outputString += "Your Registered Courses: \n\n";
                     outputString += theStudentController.getStudentCourses();
