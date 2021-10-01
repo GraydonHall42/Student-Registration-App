@@ -7,7 +7,7 @@ public class StudentList {
     private ArrayList<Student> studentList;
 
     public StudentList() {
-        studentList = ImaginaryDatabase.getStudentDatabase();
+        studentList = UniversityDatabaseGenerator.getStudentDatabase();
     }
 
     public Student authenticateStudent(String name, int id){

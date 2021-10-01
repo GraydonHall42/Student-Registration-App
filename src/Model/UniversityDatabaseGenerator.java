@@ -2,12 +2,12 @@ package Model;
 
 import java.util.ArrayList;
 
-public final class ImaginaryDatabase {
+public final class UniversityDatabaseGenerator {
 
     private static ArrayList<Course> courseDatabase;
     private static ArrayList<Student> studentDatabase;
 
-    private ImaginaryDatabase() { }
+    private UniversityDatabaseGenerator() { }
 
     public static ArrayList<Course> getCourseDatabase() {
 

@@ -7,7 +7,7 @@ public class CourseList {
     private ArrayList<Course> courseList;
 
     public CourseList(){
-        courseList = ImaginaryDatabase.getCourseDatabase();
+        courseList = UniversityDatabaseGenerator.getCourseDatabase();
     }
 
 
