@@ -59,13 +59,13 @@ public class StudentView extends JFrame{
 
         // validate ID is 4 digits
         var IDLength =  studentID.length();
-        if(IDLength!=4){
+        if(IDLength!=4 && !studentID.equals("N/A")){
             outputArea.setText("Error: Student ID Must be a 4 digit integer");
             return false;
         }
 
 
-        if(!isInteger(studentID)){
+        if(!isInteger(studentID) && !studentID.equals("N/A")){
             outputArea.setText("Error: Student ID Must be a 4 digit integer");
             return false;
         }
@@ -125,6 +125,10 @@ public class StudentView extends JFrame{
         tfCourseNum.setText("N/A");
         tfSecNum.setEnabled(false);
         tfSecNum.setText("N/A");
+        tfStudentID.setEnabled(false);
+        tfStudentID.setText("N/A");
+        tfStudentName.setEnabled(false);
+        tfStudentName.setText("N/A");
         optionList.addListSelectionListener(new ListSelectionListener() {
             @Override
             public void valueChanged(ListSelectionEvent e) {
@@ -136,6 +140,10 @@ public class StudentView extends JFrame{
                     searchButton.setEnabled(true);
                     switch (optionList.getSelectedIndex() + 1) {
                         case 1:
+                            tfStudentID.setEnabled(false);
+                            tfStudentID.setText("N/A");
+                            tfStudentName.setEnabled(false);
+                            tfStudentName.setText("N/A");
                             tfCourseName.setEnabled(true);
                             tfCourseName.setText("");
                             tfCourseNum.setEnabled(true);
@@ -145,6 +153,10 @@ public class StudentView extends JFrame{
                             break;
                         case 2:
                         case 3:
+                            tfStudentID.setEnabled(true);
+                            tfStudentID.setText("");
+                            tfStudentName.setEnabled(true);
+                            tfStudentName.setText("");
                             tfCourseName.setEnabled(true);
                             tfCourseName.setText("");
                             tfCourseNum.setEnabled(true);
@@ -153,7 +165,22 @@ public class StudentView extends JFrame{
                             tfSecNum.setText("");
                             break;
                         case 4:
+                            tfCourseName.setEnabled(false);
+                            tfCourseName.setText("N/A");
+                            tfCourseNum.setEnabled(false);
+                            tfCourseNum.setText("N/A");
+                            tfSecNum.setEnabled(false);
+                            tfSecNum.setText("N/A");
+                            tfStudentID.setEnabled(false);
+                            tfStudentID.setText("N/A");
+                            tfStudentName.setEnabled(false);
+                            tfStudentName.setText("N/A");
+                            break;
                         case 5:
+                            tfStudentID.setEnabled(true);
+                            tfStudentID.setText("");
+                            tfStudentName.setEnabled(true);
+                            tfStudentName.setText("");
                             tfCourseName.setEnabled(false);
                             tfCourseName.setText("N/A");
                             tfCourseNum.setEnabled(false);
