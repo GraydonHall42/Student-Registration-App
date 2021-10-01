@@ -8,8 +8,8 @@ public class CourseController {
 
     private CourseList courseList;
 
-    public CourseController() {
-        courseList = new CourseList();
+    public CourseController(CourseList courseList) {
+        this.courseList = courseList;
     }
 
     // Search for Course

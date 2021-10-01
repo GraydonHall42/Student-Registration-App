@@ -7,8 +7,8 @@ public class StudentController {
     private StudentList studentList;
     private Student currentStudent;
 
-    public StudentController() {
-        studentList = new StudentList();
+    public StudentController(StudentList studentList) {
+        this.studentList = studentList;
     }
 
 
