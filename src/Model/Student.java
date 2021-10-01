@@ -18,10 +18,7 @@ public class Student {
     }
 
     // Register a student for a course
-    public String registerForCourse (CourseList cat, String courseName, String courseNumber, int sectionNumber) {
-
-        // get course
-        Course myCourse = cat.searchCat(courseName, courseNumber);
+    public String registerForCourse (Course myCourse, String courseName, String courseNumber, int sectionNumber) {
 
         // validate student can not reg for more than 6 classes
         if(courseList.size() > 5) {

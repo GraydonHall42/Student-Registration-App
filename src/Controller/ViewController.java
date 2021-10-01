@@ -9,10 +9,12 @@ import java.awt.event.ActionListener;
 public class ViewController {
     RegistrationView theView;
     StudentController theStudentController;
+    CourseController theCourseController;
 
-    public ViewController(RegistrationView theView, StudentController studentController) {
+    public ViewController(RegistrationView theView, StudentController studentController, CourseController courseController) {
         this.theView = theView;
         this.theStudentController = studentController;
+        this.theCourseController = courseController;
 
         theView.addSearchButtonListener(new SearchButtonListener());
 
@@ -40,29 +42,30 @@ public class ViewController {
 
             // talk to back end using this input...
             // and get a string back to output to the user
-            switch (option) {
+            switch (option + 1) {
                 // search for course
-                case 0:
-                    outputString = theStudentController.searchForCourse(courseName, courseNum);
+                case 1:
+                    outputString = theCourseController.printCourse(courseName, courseNum);
                     break;
 
                 // add a course
-                case 1:
+                case 2:
                     if(theStudentController.validateStudent(new Student(name, Integer.parseInt(id)))) {
-                        outputString = "Hello " + theStudentController.getCurrentStudentName() + "!\n\n";
+                        outputString = "Hello " + theStudentController.getCurrentStudent() + "\n";
                     }
                     else {
                         outputString = "That is not a valid student in our database.";
                         break;
                     }
 
-                    outputString += theStudentController.addCourse(courseName, courseNum, Integer.parseInt(secNum));
+                    outputString += theStudentController.addCourse(theCourseController.searchForCourse(courseName, courseNum),
+                                                                    courseName, courseNum, Integer.parseInt(secNum));
                     break;
 
                 // Remove a course
-                case 2:
+                case 3:
                     if(theStudentController.validateStudent(new Student(name, Integer.parseInt(id)))) {
-                        outputString = "Hello " + theStudentController.getCurrentStudentName() + "!\n\n";
+                        outputString = "Hello " + theStudentController.getCurrentStudent() + "\n";
                     }
                     else {
                         outputString = "That is not a valid student in our database.";
@@ -73,14 +76,14 @@ public class ViewController {
                     break;
 
                 // View all courses
-                case 3:
-                    outputString = "Course Catalogue:\n\n" + theStudentController.viewCourses();
+                case 4:
+                    outputString = "Course Catalogue:\n\n" + theCourseController.printAllCourses();
                     break;
 
                 // View all courses take by student
-                case 4:
+                case 5:
                     if(theStudentController.validateStudent(new Student(name, Integer.parseInt(id)))) {
-                        outputString = "Hello " + theStudentController.getCurrentStudentName() + "!\n\n";
+                        outputString = "Hello " + theStudentController.getCurrentStudent() + "\n";
                     }
                     else {
                         outputString = "That is not a valid student in our database.";
