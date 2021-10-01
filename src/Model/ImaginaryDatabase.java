@@ -4,12 +4,14 @@ import java.util.ArrayList;
 
 public final class ImaginaryDatabase {
 
-    private static ArrayList<Course> courseDatabase ;
+    private static ArrayList<Course> courseDatabase;
     private static ArrayList<Student> studentDatabase;
 
     private ImaginaryDatabase() { }
 
     public static ArrayList<Course> getCourseDatabase() {
+
+        courseDatabase = new ArrayList<Course>();
 
         courseDatabase.add(new Course("ENSF", "607"));
         courseDatabase.add(new Course("ENSF", "608"));
@@ -36,6 +38,8 @@ public final class ImaginaryDatabase {
     }
 
     public static ArrayList<Student> getStudentDatabase() {
+
+        studentDatabase = new ArrayList<Student>();
 
         studentDatabase.add(new Student("Kevin", 1111));
         studentDatabase.add(new Student("Jane", 2222));

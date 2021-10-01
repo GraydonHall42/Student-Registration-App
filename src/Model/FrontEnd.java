@@ -147,17 +147,17 @@ public class FrontEnd {
                     int indexToDelete;
                     boolean notEmptyList;
                     // show user registered courses list
-                    notEmptyList = currentStudent.getRegisteredCourses();
+                    //notEmptyList = currentStudent.getRegisteredCourses();
                     //if list in empty break;
-                    if(!notEmptyList) {
-                        break;
-                    }
+//                    if(!notEmptyList) {
+//                        break;
+//                    }
                     // get course they want to delete
                     System.out.println("Select the number of the course you would like to delete: ");
                     // validate user entry
                     try {
                         indexToDelete = input.nextInt() - 1;
-                        currentStudent.deleteCourse(indexToDelete);
+                       //currentStudent.deleteCourse(indexToDelete);
                     } catch (Exception err) {
                         System.out.println("That is not a valid input.");
                         break;

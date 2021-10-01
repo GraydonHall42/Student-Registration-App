@@ -10,13 +10,13 @@ public class StudentList {
         studentList = ImaginaryDatabase.getStudentDatabase();
     }
 
-    public boolean authenticateStudent(Student currentStudent){
+    public Student authenticateStudent(Student student){
         for(Student s : studentList){
-            if(s.equals(currentStudent)){
-                return true;
+            if(s.equals(student)){
+                return s;
             }
         }
-        return false;
+        return null;
     }
 
     @Override

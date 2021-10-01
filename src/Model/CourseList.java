@@ -10,10 +10,6 @@ public class CourseList {
         courseList = ImaginaryDatabase.getCourseDatabase();
     }
 
-    //prints list of courses
-    public void listCourses() {
-        System.out.println(this);
-    }
 
     @Override
     public String toString() {

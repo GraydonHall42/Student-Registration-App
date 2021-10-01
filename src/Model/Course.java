@@ -36,7 +36,7 @@ public class Course {
 
     // method to determine if two Courses equal each other using name and number
     public boolean equals(Course c) {
-        return this.courseName == c.getCourseName() && this.courseNumber == c.getCourseNumber();
+        return this.courseName.equals(c.getCourseName()) && this.courseNumber.equals(c.getCourseNumber());
     }
 
     //GETTERS AND SETTERS BELOW

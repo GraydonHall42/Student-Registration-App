@@ -18,35 +18,30 @@ public class Student {
     }
 
     // Register a student for a course
-    public void registerForCourse (CourseList cat, String courseName, String courseNumber, int sectionNumber) {
+    public String registerForCourse (CourseList cat, String courseName, String courseNumber, int sectionNumber) {
 
         // get course
         Course myCourse = cat.searchCat(courseName, courseNumber);
 
         // validate student can not reg for more than 6 classes
         if(courseList.size() > 5) {
-            System.out.println("You are only allowed to register for 6 classes.");
-            return;
+            return "You are only allowed to register for 6 classes.";
         }
         // validate course exists
         if(myCourse == null) {
-            System.out.println("Not a valid course.");
-            return;
+            return "Not a valid course.";
         }
         // validate section number provided exists
         if(sectionNumber > myCourse.getCourseOfferingSize()) {
-            System.out.println("Not a valid section.");
-            return;
+            return "Not a valid section.";
         }
         //validate student has all pre req's
         if(!this.checkPreReqs(myCourse)) {
-            System.out.println("You do not have all the PreReq's needed to register for this Course.");
-            return;
+            return "You do not have all the PreReq's needed to register for this Course.";
         }
         //validate student is not already registered in course
         if(!this.checkStudentRegistration(myCourse)) {
-            System.out.println("You are already registered in this course.");
-            return;
+            return "You are already registered in this course.";
         }
 
 
@@ -57,7 +52,8 @@ public class Student {
         new Registration(this, offering);
 
         // let user know they have been sucessfully registered
-        System.out.println("Registered Sucessfully!");
+        return "Registered Sucessfully for " + courseName + " " + courseNumber
+                + " - section " + sectionNumber + ".";
 
     }
 
@@ -67,8 +63,21 @@ public class Student {
     }
 
     // delete student Registration
-    public void deleteCourse(int index) {
-        courseList.get(index).deleteRegistration();
+    public String deleteCourse(String courseName, String courseNumber, int sectionNumber) {
+        if(this.courseList.size() < 1){
+            return "You are not enrolled in any courses";
+        }
+        int index = 0;
+        while(index < courseList.size()){
+            CourseOffering off = courseList.get(index).getOffering();
+            if(off.getCourse().equals(new Course(courseName, courseNumber)) && off.getOfferingNumber() == sectionNumber){
+                courseList.get(index).deleteRegistration();
+                return "You have been removed from " + off.getCourse().getCourseName() + " " + off.getCourse().getCourseNumber() + ".";
+            }
+            index++;
+        }
+
+        return "You are not registered in that class";
     }
 
     // remove Registered object from students course list
@@ -77,10 +86,9 @@ public class Student {
     }
 
     // Print courses student is registered for
-    public boolean getRegisteredCourses() {
+    public String getRegisteredCourses() {
         if(courseList.size() < 1) {
-            System.out.println("You are not currently registered for any courses\n");
-            return false;
+            return "You are not currently registered for any courses\n";
         }
         String temp = "";
         int count = 1;
@@ -89,8 +97,7 @@ public class Student {
             count++;
         }
 
-        System.out.println(temp);
-        return true;
+        return temp;
     }
 
     // check students taken courses agaisnt courses pre reqs
@@ -122,7 +129,7 @@ public class Student {
 
 
     public boolean equals(Student student){
-        if(student.getName() == this.getName() && student.getStudentId() == this.getStudentId()){
+        if(student.getName().equals(this.getName()) && student.getStudentId() == this.getStudentId()){
             return true;
         }
         else{

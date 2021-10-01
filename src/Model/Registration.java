@@ -18,14 +18,14 @@ public class Registration {
 
     // Add Registration object to the Student and Offering
     private void addRegistration() {
-        //student.addRegistration(this);
+        student.addRegistration(this);
         offering.addRegistration(this);
 
     }
 
     // Delete Registration object from the Student and Offering
     public void deleteRegistration() {
-        //student.removeRegistration(this);
+        student.removeRegistration(this);
         offering.removeRegistration(this);
 
     }
