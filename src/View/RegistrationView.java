@@ -23,7 +23,7 @@ public class RegistrationView extends JFrame{
     public RegistrationView(){
 
         String[] studentOptions = {
-                "1. Search catalogue courses",
+                "1. Search course catalogue",
                 "2. Add course to student courses",
                 "3. Remove course from student courses",
                 "4. View All courses in catalogue",
