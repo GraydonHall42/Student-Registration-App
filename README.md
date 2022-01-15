@@ -1,6 +1,14 @@
 # ENSF 607 Project - StudentRegistrationApp
 
-The Student Registration App is a model of an application that students at a given school could use to register for classes. This app uses an MVC design pattern with a simple GUI. A student enters their name and student number which is varified by the app before they are allowed to register. Once they are authenticated, a student will find and select the course and offering section they would like to enroll in. 
+The Student Registration App is a model of an 
+application that students at a given school could use to 
+register for classes. This app uses an MVC design 
+pattern with a simple GUI. A student enters their name 
+and student number which is varified by the app before they are allowed to register. 
+Once they are authenticated, a student will find and select the course and offering section they 
+would like to enroll in.<br>
+The goal of this project was to expand on our original student registration system we 
+built, by adding a GUI, as well as refactoring the code to utilize an MVC design pattern.
 
 ![StudentRegistrationExample](StudentRegistrationApp.gif)
 
