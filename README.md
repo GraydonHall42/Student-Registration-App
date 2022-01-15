@@ -1,23 +1,25 @@
-[![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-f059dc9a6f8d3a56e377f745f24479a46679e63a5d9fe6f495e02850cd0d8118.svg)](https://classroom.github.com/online_ide?assignment_repo_id=464471&assignment_repo_type=GroupAssignmentRepo)
-﻿**ENSF 607 – Advanced Software Development and Architecture**                                        
+# ENSF 607 Project - StudentRegistrationApp
 
-**Assignment 3** 
+The Student Registration App is a model of an application that students at a given school could use to register for classes. This app uses an MVC design pattern with a simple GUI. A student enters their name and student number which is varified by the app before they are allowed to register. Once they are authenticated, a student will find and select the course and offering section they would like to enroll in. 
 
-This assignment can be done individually or in pair (i.e., groups of 2)
+![StudentRegistrationExample](StudentRegistrationApp.gif)
 
-Submission Information and Due Dates
+The app contains the following menu features:
+1. Search for a course
+2. Register for a course
+3. Unregister for a course
+4. View all the coruses a student has registered for
+5. List all courses offered by the school
 
-- Students will demo their project to their TA **during the lab on Friday October 8th** – Note: Both group members must be present during the demo
-- Students must submit their lab to the Git repository by **11:59 on Monday October 8th**
+The app verifies the following conditions:
+1. The course and section, that the student is registering for, exists.
+2. The student has the required prerequisites for the course they are trying to enroll in.
+3. The student does not enroll in more than 6 courses.
+4. The student does not enroll in the same course twice.
 
-**Project Objectives:**
+# UML Diagram
+![](UMLDiagram.png)
 
-In lab 1 you were tasked by creating a student registration system based on the UML diagram given to you in the lecture material. In this assignment, you will modify the design of your application to MVC. Your final submission should have the same functionality of the application you developed in lab 1. However, for this assignment you must have a GUI instead of a console-based application. 
-
-The deliverables for this assignment include:
-
-- Modified UML diagram(s) to show case your design. You may choose to have more than one UML diagram to show a meaningful high-level and low-level view of the system. UML package diagram and class diagram are appropriate to use.
-- Your Java application which must be delivered in 3 packages:
-  - Model
-  - View
-  - Controller
+# Contributors
+* [Graydon Hall](https://github.com/GraydonHall42)
+* [Jared Kraus](https://github.com/JaredKraus)
