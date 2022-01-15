@@ -7,8 +7,6 @@ pattern with a simple GUI. A student enters their name
 and student number which is varified by the app before they are allowed to register. 
 Once they are authenticated, a student will find and select the course and offering section they 
 would like to enroll in.<br>
-The goal of this project was to expand on our original student registration system we 
-built, by adding a GUI, as well as refactoring the code to utilize an MVC design pattern.
 
 ![StudentRegistrationExample](StudentRegistrationApp.gif)
 
@@ -24,6 +22,9 @@ The app verifies the following conditions:
 2. The student has the required prerequisites for the course they are trying to enroll in.
 3. The student does not enroll in more than 6 courses.
 4. The student does not enroll in the same course twice.
+
+The goal of this project was to expand on our original student registration system we 
+built, by adding a GUI, as well as refactoring the code to utilize an MVC design pattern.
 
 # UML Diagram
 ![](UMLDiagram.png)
